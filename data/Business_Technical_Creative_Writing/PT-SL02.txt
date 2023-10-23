@@ -1,0 +1,6 @@
+Question:
+You are an expert Cloud Solutions Architect addressing a customer CTO about Amazon DynamoDB. Craft a convincing argument for why the CTO should consider using DynamoDB as the backend of their next major software development project. Be concise and limit your response to 400 words or less.
+
+Response:
+
+

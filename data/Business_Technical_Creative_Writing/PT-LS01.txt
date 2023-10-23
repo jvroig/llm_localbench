@@ -1,0 +1,22 @@
+Article Text:
+
+You've probably heard "landing zones" mentioned at some point or another if you work even just tangentially in the Cloud industry. It sounds very important, and even sort-of, kind-of military-ish. So what the heck exactly is a landing zone in the Cloud, and why should you care?
+What does "landing zone" even mean?
+In the military, a landing zone (LZ) is literally a pad or area where aircraft (especially helicopters) can land. If there is an LZ in an area, then you know that everyone being airlifted to the area will land and start at the exact same place - the LZ. It doesn't matter if we're airlifting new personnel, medical supplies, or arms and ammunition. They all land and start their life in that new area on the LZ, where we know it is secure and necessary support operations are in place.
+The Cloud co-opted that terminology because it describes what we want to accomplish when it comes to scaling Cloud adoption and governance. We want every single Cloud account, across all the business units (BUs) of an organization, to start at the exact same, predefined starting point.
+We want to make sure every new account follows the same baseline security guidelines and best practices, and have access to the same basic building blocks as everybody else.
+How does a landing zone help me?
+At their core, Cloud landing zones are a scalable and secure configuration to make complex Cloud environments (read: Enterprise-level, multi-account environments) easier to govern and, just as critically, easier to adopt.
+Landing zones are meant to help two distinct general Cloud stakeholders, which we can loosely identify as "admins" and "consumers":
+Admins: For those that are ultimately responsible for the administration of Cloud accounts, a landing zone approach makes it easier for them to centrally manage and govern the entirety of their multi-account environment.
+Consumers: These are the general Cloud users in an organization. They might be developers who create applications in the Cloud, or they might simply be users who need to deploy specific infrastructure (VMs, storage, databases…).
+Typically, consumers are interested only in consuming Cloud services. This is a problem, because that means they usually don't care about (and are also typically not trained for) security and compliance in the Cloud. So if important aspects of Cloud usage (like security, cost and various other policy compliance) are left to the goodwill of consumers, well… that multi-account environment you have is headed for a really bad nightmare.
+And this is why landing zones are essential.
+An LZ helps the Cloud admins by giving them centralized management of their multi-account environment, with baselines and automations baked-in. Security and service controls for each new account created, for example, means Cloud admins will have the peace of mind knowing that consumers in every account are automatically following these security and service controls, because their creation and enforcement are automatic.
+An LZ helps the Cloud consumers, too, because now they can focus on their work, instead of (for example) figuring out how to implement an encrypted, centralized Cloud audit trail so that IT Audit won't yell at them next year. They know the landing zone is already set up so that all necessary security and governance baselines are in place - with no effort on their end.
+It's a win-win.
+
+Please propose 2 possible titles for the article above.
+
+Possible titles:
+

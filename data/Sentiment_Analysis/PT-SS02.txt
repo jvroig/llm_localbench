@@ -1,0 +1,15 @@
+Here is product review from a customer, which is delimited with triple backticks.
+
+Review text: 
+```
+A good tablet overall. The stylus responsiveness is great for digital art. However, it does heat up a bit after prolonged use
+```
+
+Overall senitment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+What is the overall sentiment of that product review? 
+
+Answer:

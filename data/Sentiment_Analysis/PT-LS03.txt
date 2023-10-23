@@ -1,0 +1,66 @@
+Here is product review from a customer, which is delimited with triple backticks.
+
+Review text: 
+```
+I am extremely disappointed with this wardrobe. The quality of the materials used is very poor and the construction feels flimsy. The doors do not close properly and the hinges are already coming loose after just a few weeks of use. I expected much better for the price I paid. Would not recommend it.
+```
+
+Overall senitment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+What is the overall sentiment of that product review?
+
+Answer: Negative
+
+
+Here is product review from a customer, which is delimited with triple backticks.
+
+Review text:
+``` 
+I recently bought the Scandinavian Serenity Rocking Chair and I must say that I am quite impressed. The design and craftsmanship are top-notch. The chair is incredibly comfortable and provides excellent support for my back. The rocking motion is smooth and soothing, perfect for relaxation after a long day. The only reason I am not giving it a full 5 stars is because the assembly instructions were a bit unclear and it took me longer than expected to put it together. Overall, I highly recommend the Scandinavian Serenity Rocking Chair for anyone looking for a stylish and comfortable addition to their home. 
+```
+
+Overall senitment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+What is the overall sentiment of that product review?
+
+Answer: Positive
+
+
+Here is product review from a customer, which is delimited with triple backticks.
+
+Review text: 
+```
+I bought the Zen End Table and I have mixed feelings about it. On the positive side, the design is sleek and modern, which complements my living room aesthetic. However, the quality is not up to par. The table arrived with a few scratches and the wood feels a bit flimsy. For the price I paid, I expected better craftsmanship. Overall, I would give it 3 stars. 
+```
+
+Overall senitment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+What is the overall sentiment of that product review?
+
+Answer: Neutral
+		
+
+Here is product review from a customer, which is delimited with triple backticks.
+
+Review text: 
+```
+I am extremely disappointed with the Vintage Elegance Vanity. The quality of the product is very poor and does not meet my expectations at all. The materials used feel cheap and the vanity arrived with several scratches and dents. The assembly instructions were also confusing and the whole process took much longer than anticipated. I would not recommend this product to anyone.
+```
+
+Overall senitment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+What is the overall sentiment of that product review?
+
+Answer:

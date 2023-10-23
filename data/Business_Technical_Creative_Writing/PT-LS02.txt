@@ -1,0 +1,24 @@
+Excerpt:
+
+AWS Lambda (and serverless and Functions-as-a-Service (Faas), in general) is the best way to run code. Most of the operational overhead is not your responsibility (i.e., no servers to administer). What's not super obvious, though, is how to scale performance in Lambda using multithreading.
+In this new serverless series, we'll dive into multithreading in AWS Lambda, looking at implementation, scaling, and even comparing multithreading vs multi-instance architectures.
+Today, in part 1, I'll provide experimental data to show how multithreaded performance scales in Lambda.
+TL;DR: What memory size for X number of threads?
+Above is the table of summarized results from this experiment, showing at what point a Lambda function will have max performance for a certain number of threads (workers):
+- One thread = 2048MB
+- Two threads = 4096MB
+- Three threads = 5376MB
+- Four threads = 7168MB
+- Five threads = 8960MB
+- Six threads = 10240MB (Lambda max memory size)
+Now, if you're wondering how to interpret this and how we got the data in that table, read on!
+Quick refresher: AWS Lambda and core counts
+While you don't have to worry about servers in Lambda, you do still have to worry about some important things (but only very lightly, far from having to actually worry about a real server). Available compute resources - in the form of compute cores and memory - is one of these things.
+In AWS Lambda, while you can directly specify the amount of RAM your function will have (currently from 128MB all the way to 10240MB, in 1MB increments), you can't do the same for CPU cores.
+Instead, as you increase memory, you also get a proportional amount of CPU power. IIRC, back when Lambda only had a 4GB RAM limit, there used to be an official graph in the documentation that showed you when you get an additional core. I can't find it anymore. (Maybe my Google-fu is failing; if you still know where this is, please link in the comments!)
+So, here in Part 1, what we'll uncover is exactly that problem - let's figure out at what points in RAM amounts our Lambda function gets to enjoy the power of additional cores. For this, we will need a CPU-intensive load, give it varying amounts of RAM from 128MB up to 10GB, and also vary the number of workers each time (i.e., how multi-threaded it is) from 1 to 6 (6 is the current maximum number of cores you will get in a Lambda function)
+The experiment: CPU-intensive load through password hashing...
+
+Summarize the excerpt above into key points using 10 sentences or less.
+
+Key-points:
