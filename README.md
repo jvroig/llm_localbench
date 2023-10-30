@@ -1,5 +1,6 @@
 # llm_localbench
 Python infrastructure for benchmarking LLMs.
+(This doc is incomplete, but in progress. Check back soon!)
 
 ## Running the benchmark - run.py
 The **run.py** file executes the benchmark. This is designed for running local LLMs through llama.cpp. A working llama.cpp executable is necessary (and not provided by this repo).

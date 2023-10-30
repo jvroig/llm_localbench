@@ -1,0 +1,8 @@
+Which AWS service enables you to build event-driven applications and decouple the components of your application architecture?
+
+(A) Amazon SQS
+(B) Amazon EventBridge (Amazon CloudWatch Events)
+(C) Amazon SNS
+(D) Amazon Kinesis
+
+Answer: 
