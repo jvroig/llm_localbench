@@ -1,56 +1,8 @@
 import os
 import subprocess
-from datetime import datetime
 
-###Machine specific settings
-path_to_main  = "/home/jvroig/Dev/llama.cpp"
-#n_threads     = [ "4", "6", "8", "10", "12" ]
-n_threads     = [ "8" ]
-model_ext     = ".gguf"
-model_basedir = "/mnt/AData/VMShared/LLMs/"
-
-###General settings - do not edit
-executable        = "main"
-output_basedir    = "results/output/"
-error_basedir     = "results/perf/"
-log_basedir       = "results/log/"
-log_filename      = "run_" + datetime.now().strftime('%Y-%m-%d_%Hh%Mm')
-max_input_tokens  = "1408"
-max_output_tokens = "512"
-
-###Experiment batch settings
-# models = [
-#     "llama-2/llama-2-7b-chat", 
-#     "llama-2/llama-2-13b-chat", 
-#     "mistral/mistral-7b-instruct",
-#     "falcon/falcon-7b-instruct"
-# ]
-# quants = ["q4_K", "q5_K", "q8", "f16"]
-# temps  = ["0.1", "0.6", "1.0"]
-
-models = [
-    "mistral/mistral-7b-instruct",
-]
-quants = ["q4_K"]
-temps  = ["0.6"]
-
-prompt_domains = ["Business_Technical_Creative_Writing", 
-                  "Sentiment_Analysis",
-                  "Cloud"]
-
-prompt_types = [
-    "LL",
-    "LS",
-    "SL",
-    "SS",
-    "AWS",
-    "TITLE",
-    "TAGS"
-]
-
-prompt_range = 12
-prompt_runs = 20 #how many times each prompt (domain+type+num) is repeated
-
+#FIXME: Turn config into a YAML file 
+from config import *
 
 os.makedirs(os.path.dirname(log_basedir), exist_ok=True)
 with open(log_basedir+log_filename, "a") as log_file:
@@ -97,14 +49,13 @@ for model_name in models:
                             for run in range(1, prompt_runs + 1):
                                 stdout = []
 
-                                output_dir  = output_basedir + prompt_domain + "/" + model_base + model_name + "-" + quant + "/temp" + temp + "/threads" + threads + "/" + f"run{str(run)}/"
-                                error_dir   = error_basedir + prompt_domain + "/" + model_base + model_name + "-" + quant + "/temp" + temp + "/threads" + threads + "/" + f"run{str(run)}/"
+                                output_dir  = output_basedir + prompt_domain + "/" + model_name + "-" + quant + "/temp" + temp + "/threads" + threads + "/" + f"run{str(run)}/"
+                                error_dir   = error_basedir + prompt_domain + "/" + model_name + "-" + quant + "/temp" + temp + "/threads" + threads + "/" + f"run{str(run)}/"
                                 os.makedirs(os.path.dirname(output_dir + prompt_file), exist_ok=True)
                                 os.makedirs(os.path.dirname(error_dir + prompt_file), exist_ok=True)
 
-                                model_dir = model_base + model_name + "/"
-                                model = model_base + model_name + "-" + quant + model_ext
-                                model = model_basedir + model_dir + model
+                                model = model_name + "-" + quant + model_ext
+                                model = model_basedir + model
 
                                 stdout.append("*******************")
                                 stdout.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))

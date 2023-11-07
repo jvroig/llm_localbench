@@ -1,0 +1,29 @@
+ Article Text:
+
+The most exciting thing in the Cloud is serverless technology.
+Whether you are a small business or a giant multinational corporation, getting into serverless application architectures is absolutely one of the best investments you can make for your organization. With serverless, you can unlock incredible, order-of-magnitude lower operating costs for your applications, without sacrificing reliability, performance, scalability and security.
+Why Serverless? Cost-Efficiency!
+The infographic above shows the result of a cost experiment I did. I created a 100% serverless web app (will discuss the architecture shortly), and then ran automated API calls and page retrievals against it to simulate a reasonably heavy, month-long workload. The bill for the entire serverless web app did not even reach $5.
+This is the most compelling reason for you to act towards serverless computing for your org. For most use cases, nothing beats a truly serverless application architecture when it comes to cost efficiency - and that's not at the expense of scalability, reliability, performance and security. Going deep into these other factors is beyond the scope of this article, but suffice it to say, when most of the reliability, scalability, performance and security are offloaded to the hyperscaler, you generally get a better experience than if you had to manage those yourself - and that's exactly the reality in serverless.
+Basic Serverless Web Application Architecture
+Above, you can see the basic serverless architecture that resulted in the insane cost-efficiency I just mentioned.
+Let's step through the architecture quickly:
+A user accesses your web application through his browser
+His browser requests and receives web files (HTML / CSS / JS / images / etc.) from an S3 bucket that is configured for static web hosting. Essentially, this is like Apache/httpd in the old web world.
+Once the page loads in his browser, dynamic API calls (c/o JavaScript) fire in response to events (such as button clicks, or even just the page loading completely). These API calls hit your API Gateway endpoints.
+Your API Gateway uses a Lambda Authorizer to verify if the API request should be honored. When the Lambda Authorizer confirms, API Gateway then routes the request to the appropriate backend service, which is composed of Lambda functions.
+Your Lambda functions work on the request. For non-trivial systems, these mostly mean querying a database and doing some pre- or post-processing. In this architecture, that database is DynamoDB.
+DynamoDB executes the query, responds back to the Lambda function, and the response is then sent back to the user's browser as an API Gateway response.
+
+That's essentially what's happening. It's a typical, run-of-the-mill business system in web app form, nothing sexy or exciting about it.
+What is sexy and exciting, though, is the cost. If you implemented this same architecture using traditional old-school cloud architecture (say, EC2 + ALB for high availability, running the LAMP stack), it'd cost you about $150 a month instead of <$5. (Metric: a busy system that has 1,000+ data encoding transactions and 4,000+interactions every hour)
+Not only are you paying much more, that EC2 + ALB setup is NOT more reliable, NOT more secure, and NOT more scalable than the basic serverless web app architecture. It's pretty much a no-win scenario for an EC2 deployment here.
+Wrap up
+This article's goal is to evangelize the wonders of serverless, and I hope that's what you're taking away so far. Hopefully, this motivates you to take a deeper look into serverless, if you aren't a convert yet.
+In a future article, we'll deep dive into actually implementing such an architecture.
+
+Propose two possible titles for the article above.
+
+Possible titles:
+1. "The Power of Serverless Technology: How to Cut Costs and Increase Efficiency in Your Applications"
+2. "Unleashing the Potential of Serverless Computing: A Step-by-Step Guide to Implementing a Cost-Efficient Web Application Architecture"

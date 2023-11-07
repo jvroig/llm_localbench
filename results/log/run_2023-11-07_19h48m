@@ -1,0 +1,49 @@
+*******************
+Experiment Settings:
+Models: ['mistral/mistral-7b-instruct']
+Quants: ['q4_K']
+Temps: ['0.6']
+Threads: ['8']
+Max Input Tokens: 1408
+Max Output Tokens: 512
+Prompt Domains: ['Business_Technical_Creative_Writing', 'Sentiment_Analysis', 'Cloud']
+Prompt Types: ['LL', 'LS', 'SL', 'SS', 'AWS', 'TITLE', 'TAGS']
+Prompt Range: 12
+Prompt Runs: 20
+-------------------
+*******************
+2023-11-07 19:48:32
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 1
+Done!
+-------------------
+*******************
+2023-11-07 19:48:40
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 2
+Done!
+-------------------
+*******************
+2023-11-07 19:48:46
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 3
+Done!
+-------------------
+*******************
+2023-11-07 19:48:51
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 4
+Done!
+-------------------
+*******************
+2023-11-07 19:48:58
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 5
+Done!
+-------------------
+*******************
+2023-11-07 19:49:06
+Now running: /mnt/AData/VMShared/LLMs/mistral/mistral-7b-instruct-q4_K.gguf Temperature: 0.6 Threads: 8
+Prompt Domain: Business_Technical_Creative_Writing Prompt file: PT-TITLE01.txt Run: 6
+Done!
+-------------------
