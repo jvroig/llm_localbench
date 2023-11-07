@@ -1,0 +1,48 @@
+Your task is to identify the sentiment of a product review. Here are a few examples of a product review from a customer, along with the corresponding sentiment analysis of the review:
+
+Example #1:
+Product Name: Provence French Country-style Wardrobe
+Review text: 
+```
+I am extremely disappointed with this wardrobe. The quality of the materials used is very poor and the construction feels flimsy. The doors do not close properly and the hinges are already coming loose after just a few weeks of use. I expected much better for the price I paid. Would not recommend it.
+```
+
+What is the overall sentiment of that product review?
+Overall sentiment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+Answer: Negative
+
+Example #2:
+Product Name: Zen End Table
+Review text: 
+```
+I have mixed feelings about it. On the positive side, the design is sleek and modern, which complements my living room aesthetic. However, the quality is not up to par. The table arrived with a few scratches and the wood feels a bit flimsy. For the price I paid, I expected better craftsmanship. Overall, I would give it 3 stars. 
+```
+
+What is the overall sentiment of that product review?
+Overall sentiment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+Answer: Neutral
+		
+
+Now, identify the sentiment product review below, which is delimited with triple backticks.
+
+Product Name: Kyushu Calm Lounge Sofa
+Review text: 
+```
+The quality of the fabric on this couch is okay, but it's not the most comfortable seating I've experienced. It looks nice in my living room, though.
+```
+
+What is the overall sentiment of that product review? 
+Overall sentiment must be one of the following options:
+A) Positive
+B) Negative
+C) Neutral
+
+Answer:

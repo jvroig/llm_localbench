@@ -15,8 +15,15 @@ And this is why landing zones are essential.
 An LZ helps the Cloud admins by giving them centralized management of their multi-account environment, with baselines and automations baked-in. Security and service controls for each new account created, for example, means Cloud admins will have the peace of mind knowing that consumers in every account are automatically following these security and service controls, because their creation and enforcement are automatic.
 An LZ helps the Cloud consumers, too, because now they can focus on their work, instead of (for example) figuring out how to implement an encrypted, centralized Cloud audit trail so that IT Audit won't yell at them next year. They know the landing zone is already set up so that all necessary security and governance baselines are in place - with no effort on their end.
 It's a win-win.
+AWS Landing Zone vs AWS Control Tower
+Something that used to generate a ton of confusion needs a bit of mention: AWS Landing Zone.
+So earlier, we were talking about a "landing zone" (small letter "L", small letter "Z"; generic)
+There is also something called the "AWS Landing Zone" (capital "L", capital "Z"; specific), which, pre-2019, was the de facto way to create a landing zone in AWS. This wasn't really a service - instead, AWS Landing Zone is an "AWS Solution", which you can think of basically as a quick start package - IaC templates, code, and configuration to deploy a landing zone. AWS Landing Zone is currently in "Long-term Support", which is AWS-speak for "you can keep using this, but it won't be getting any new features and updates anymore, because you should be using something else."
+Post-2019, the recommended way to create landing zones in AWS is AWS Control Tower. This is an actual AWS service, not just a "solution". Essentially, it service-ified AWS Landing Zone, making it easier to deploy, and easier to manage. Analogously, you can think of it as the jump from using IaaS (Infra as a Service) to suddenly using PaaS (Platform as a Service) - what you used to have to tinker with at a very low level to get anything done is now abstracted for you, with a lot of heavy lifting removed.
+Wrap up
+This was just a short introduction to landing zones, to get you to understand the spirit of them, why they matter, and some disambiguation between the AWS Landing Zone solution and AWS Control Tower.
+In a future article, we'll go a bit deeper into the design of landing zones and the common problems these design decisions solve.
 
-Please propose 2 possible titles for the article above.
+Propose two possible titles for the article above.
 
 Possible titles:
-

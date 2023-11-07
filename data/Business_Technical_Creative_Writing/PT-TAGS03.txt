@@ -1,0 +1,45 @@
+Read the article provided and identify three tags that best summarize its main topics. These tags should reflect the key technologies, concepts, and themes covered in the article. 
+
+Adhere to these steps for consistency and accuracy:
+- If the article mentions several technologies or themes, focus on those that are central to the main argument or purpose of the article.
+- If a technology or theme is mentioned in multiple significant contexts, it should be considered more relevant.
+- Avoid selecting tags that are only briefly mentioned or not central to the article's main points.
+
+ARTICLE TEXT:
+```
+There are important differences between RDS Multi-AZ deployments and Read Replicas. This article will clarify the different benefits of each, when you should use them, and even how to use them together.
+Read Replicas
+Benefits of read replicas:
+Provide extra database compute performance (for read-only queries).
+Protect your primary DB's critical transactions from read surges.
+Isolate different read-only workloads - for example, separate read replicas for different reporting modules, to isolate heavy users from others.
+Provide some failover capability - manual promotion to primary during a disaster, with AZ-level reliability.
+
+If you are primarily looking for a way to scale performance, and you are ok doing manual failover during disasters, Read Replicas are an excellent balance between performance and availability.
+If you need a recap of what read replicas are and more in-depth information, here's my old article on read replicas.
+Multi-AZ Deployments
+Benefits of Multi-AZ deployments:
+Synchronous replication between primary and standby. This is the best guarantee you have for making sure every data that gets committed to your primary also gets to your secondary as well - a guarantee that isn't as strong when it comes to the asynchronous replication used in read replicas.
+Automated, most hassle-free DR option. In a disaster, the last thing you want to be doing is fiddling with endpoints and doing a manual failover. RDS Multi-AZ is your best friend here, handling that failover for you quickly and without any manual intervention.
+
+If your primary concern is reliability and disaster recovery, and aren't really concerned about scaling read performance, then Multi-AZ is the better option.
+If you are looking for more in-depth information about RDS Multi-AZ deployments, here's my old article on the topic.
+Multi-AZ + Read Replica Combo
+If you need to scale performance without sacrificing synchronous replication and painless failover, you can combine Multi-AZ deployments with read replicas.
+In the architecture above, you end up paying 3x the cost of a single Primary instance, but it's a powerful combo of getting extra performance without sacrificing the data durability of synchronous replication and automatic failover.
+For heavy mission-critical workloads, combining Multi-AZ and Read Replicas - instead of choosing one over the other - is a viable option.
+Wrap Up
+So, Multi-AZ, Read Replica, or both?
+If you are only looking to solve performance problems: Read Replica.
+If you are only looking to solve data durability and painless failover: Multi-AZ
+If you are managing a highly mission-critical workload that needs both performance scaling and the highest levels of data durability and reliability: Combine Multi-AZ and Read Replicas.
+```
+
+OUTPUT FORMAT:
+- LIST OF TAGS: List the 3 most relevant tags in a simple JSON array.
+- JUSTIFICATION: Explain your answer in a brief, one-sentence explanation.
+
+LIST OF POSSIBLE TAGS:
+Serverless, Landing Zone, RDS, DynamoDB, Lambda, Control Tower, Multi-AZ, Read Replica, Disaster Recovery, Data Modeling, Performance, Scalability, Cost Optimization, Security, Governance, Observability, Monitoring, DevOps, Machine Learning, Artificial Intelligence, Software Development
+
+RESPONSE:

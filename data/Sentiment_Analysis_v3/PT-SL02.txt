@@ -1,0 +1,18 @@
+Here is a product review from a customer, which is delimited with triple backticks.
+
+Product Name: Kyushu Calm Lounge Sofa
+Review text: 
+```
+The quality of the fabric on this couch is okay, but it's not the most comfortable seating I've experienced. It looks nice in my living room, though.
+```
+
+What is the sentiment of that product review?
+Identify the product being reviewed.
+Enumerate the positive and negative aspects of the product review.
+The response should have the following elements:
+        - Product name
+        - Review Sentiment (Positive/Negative/Neutral)
+        - Positive comments about the product (Enumerate)
+        - Negative comments about the product (Enumerate)
+
+Answer:

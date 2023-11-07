@@ -1,3 +1,0 @@
-You are an AWS Solutions Architect. A customer wants to migrate his data center workloads to the AWS cloud. What AWS service can he use to run his virtual machines in the cloud? Respond in only a single sentence.
-
-Answer:

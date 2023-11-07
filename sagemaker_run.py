@@ -34,10 +34,15 @@ temps  = ["0.6"]
 prompt_domains = [ 
                   "Business_Technical_Creative_Writing"]
 
-# prompt_types = ["LL",
-#                 "LS",
-#                 "SL",
-#                 "SS"]
+# prompt_types = [
+#     "LL",
+#     "LS",
+#     "SL",
+#     "SS",
+#     "AWS",
+#     "TITLE",
+#     "TAGS"
+# ]
 
 prompt_types = ["SL", "SS"]
 

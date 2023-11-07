@@ -1,0 +1,65 @@
+Read the article provided and identify three tags that best summarize its main topics. These tags should reflect the key technologies, concepts, and themes covered in the article. 
+
+Adhere to these steps for consistency and accuracy:
+- If the article mentions several technologies or themes, focus on those that are central to the main argument or purpose of the article.
+- If a technology or theme is mentioned in multiple significant contexts, it should be considered more relevant.
+- Avoid selecting tags that are only briefly mentioned or not central to the article's main points.
+
+ARTICLE TEXT:
+```
+DynamoDB and its NoSQL brethren are essentially infinitely scalable thanks to the power of horizontal scaling, as I explained in a previous article. (That old article is worth a read if you're interested in finding out how they implemented the magic behind the scenes!)
+But there's a big caveat there: it scales infinitely and offers blazing performance at any scale if you properly model your data.
+This is part 3 of this series, where we will deal with handling hierarchical classification. (Here are Part 1 and Part 2 if you're new to the series and want to get caught up)
+Where we left off from Part 2
+In part two, we talked about the power of sparse indexes. We went through how they can be used to transform this:
+… into this:
+… so that we can more efficiently query and sort active orders from DynamoDB, without needing to waste time and money reading inactive orders at all.
+And of course, keeping with our Single-Table Design paradigm, our generic sparse index can accommodate multiple tables with the same active/inactive access pattern.
+Scenario: A hierarchical data classification, and the need to lookup at different levels of the hierarchy
+We left Part 2 with the following scenario:
+If we had such a table like above, and we often need to query for the airports per country, or per state, or per city, how do we model that in a single DynamoDB table?
+The problem in more detail
+Let's make sure we understand the problem here before we try to solve it.
+We can easily turn this into a Single-Table DynamoDB deployment by doing something like this:
+This type of design is consistent with what we've learned from Part 1, and this means we now have a "virtual table" that contains all this airport data in our DynamoDB table, along with any number of other "virtual tables" we may have.
+Here's where this breaks down:
+Querying for all airports in the USA (through GSI1) will mean having to do a FILTER against the Country field, which is not a key attribute, so the entire contents of our airport "virtual table" will be read.
+Querying for all airports in the state of California (through GSI1) will mean having to do a FILTER against the State field, which is not a key attribute, so the entire contents of our airport "virtual table" will be read.
+Querying for all airports in the city of Los Angeles (through GSI1) will mean having to do a FILTER against the City field, which is not a key attribute, so the entire contents of our airport "virtual table" will be read.
+
+We already encountered this type of problem in Part 2, so we know that if we ever do a filter operation (i.e., using a filter condition), we might end up reading (and paying for) a ton of data that we don't really need. If we only wanted to find the airports in Los Angeles, for example, we really don't want to have to go through the entire list of ALL airports in ALL countries.
+That's the core of this problem. We already know how to easily turn our Airports table into a "virtual table" in our Single-Table DynamoDB. Now we need to increase our skills to also be able to deal with a multi-level, hierarchical classification access pattern.
+Dealing with hierarchical classification data
+Here's what we can do to accommodate this hierarchical data access pattern:
+You probably noticed that not only did we remove the individual Country / State / City fields, we also made "gs1-sk" contain something else other than just a copy of the "pk" field.
+That shouldn't be totally strange. Although since Part 1 our "gsi1-sk" field contained just a copy of the "pk" field, it's only because it was what we needed to make our "virtual tables" work. If needed, we could always put a different value there, and now we did.
+Given the new table above, we can now do the following queries:
+GSI1 index queries:
+sk="airport", gs1-sk begins_with "USA" -> get all airports in the USA
+sk="airport", gs1-sk begins_with "USA#CA" -> get all airports in California
+sk="airport", gs1-sk = "USA#CA#LA" -> get all airports in Los Angeles
+sk="airport" -> get all airports
+
+Now we've actually solved this scenario's core problem - querying for airports at different levels of the hierarchical classification, without resorting to a filter condition.
+Hierarchical classification data is everywhere
+You might be thinking, "Yeah, cool trick, JV, but I'm not really ever going to be managing a list of airports, so I'm not really going to benefit from this data modeling technique!"
+But hold on there!
+Hierarchical classification data is everywhere. Let's take a more mundane example that most corporate programmers will likely encounter: Inventory data
+Above is an example of inventory of assets, with a three-tier classification. The data there isn't real, of course, but that's essentially what a lot of inventory or asset systems you've encountered look like.
+And there's also nothing special about being a three-tier classification system. 3 just happens to be a convenient number that gives enough flexibility without being too difficult for humans to manage (but you will no doubt encounter 4 or 5-tier ones, too, but more rarely).
+No matter how many tiers are in the hierarchy, we model exactly like we previously have:
+And this would work exactly like our airport "virtual table", where we can query, for example, for all furniture, or all equipment, or any level of subtypes within them, such as "all mechanical equipment" or "all one-door cabinets"
+What else other than inventory could typically use hierarchical classification? Well, does your business or application keep track of users, customers or suppliers based on geography - say, continent/region and country? That's a two-level hierarchical classification!
+Wrap up
+Hierarchical classification data is everywhere. Now you know how to efficiently deal with them in DynamoDB, giving you the best performance and best (lowest) cost.
+Next week, in Part 4 of this series, we'll tackle the issue of breaking up vs. consolidating data - an issue that affects both performance and cost.
+```
+
+OUTPUT FORMAT:
+- LIST OF TAGS: List the 3 most relevant tags in a simple JSON array.
+- JUSTIFICATION: Explain your answer in a brief, one-sentence explanation.
+
+LIST OF POSSIBLE TAGS:
+Serverless, Landing Zone, RDS, DynamoDB, Lambda, Control Tower, Multi-AZ, Read Replica, Disaster Recovery, Data Modeling, Performance, Scalability, Cost Optimization, Security, Governance, Observability, Monitoring, DevOps, Machine Learning, Artificial Intelligence, Software Development
+
+RESPONSE:

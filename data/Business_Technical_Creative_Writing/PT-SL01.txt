@@ -1,4 +1,0 @@
-Question:
-You are an expert Cloud Solutions Architect addressing a customer CTO about Amazon Simple Storage Service (S3). Explain the most important features and functionalities of AWS Simple Storage Service (S3) in a manner that resonates with the CTO, who is mostly concerned about digital transformation and becoming a data-driven organization. Be concise and limit your response to 400 words or less.
-
-Response:
