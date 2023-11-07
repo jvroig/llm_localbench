@@ -1,0 +1,43 @@
+globals:
+  path_to_main: /home/jvroig/Dev/llama.cpp"
+  model:
+    ext: ".gguf"
+    basedir: "/mnt/AData/VMShared/LLMs/"
+  results: 
+    basedir: "/mnt/AData/VMShared/LLMs/llm_localbench_results/"
+    output: "output"
+    error: "perf"
+    log:  "log"
+  threads: "8"
+  quants:
+    - q2_K
+    - q3_K
+    - q4_K
+    - q5_K
+    - q8_0
+  temps:
+    - "0.6"
+  prompt:
+    domains:
+      - "Business_Technical_Creative_Writing"
+      - "Sentiment_Analysis"
+      - "Cloud"
+    types:
+      - "LL"
+      - "LS"
+      - "SL"
+      - "SS"
+      - "AWS"
+      - "TITLE"
+      - "TAGS"
+    range: 12
+    runs: 20
+
+models:
+  "mistral/mistral-7b-instruct":
+  "falcon/falcon-7b-instruct":
+    quants:
+      - "q4_0"
+
+    
+

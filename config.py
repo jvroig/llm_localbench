@@ -23,7 +23,7 @@ max_output_tokens = "512"
 #     "mistral/mistral-7b-instruct",
 #     "falcon/falcon-7b-instruct"
 # ]
-# quants = ["q4_K", "q5_K", "q8", "f16"]
+# quants = ["q4_K", "q5_K", "q8_0", "f16"]
 # temps  = ["0.1", "0.6", "1.0"]
 
 models = [
