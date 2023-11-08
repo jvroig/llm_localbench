@@ -72,6 +72,7 @@ for model_name in models:
                                         "-t", threads, 
                                         "-n", max_output_tokens,
                                         "-c", max_input_tokens,
+                                        "-ngl", n_gpu_layers,
                                         "--log-disable",
                                         "--prompt", prompt,]
                                 

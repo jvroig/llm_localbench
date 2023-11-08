@@ -4,6 +4,7 @@ from datetime import datetime
 path_to_main  = "/home/jvroig/Dev/llama.cpp"
 #n_threads     = [ "4", "6", "8", "10", "12" ]
 n_threads     = [ "8" ]
+n_gpu_layers  = "20"
 model_ext     = ".gguf"
 model_basedir = "/mnt/AData/VMShared/LLMs/"
 

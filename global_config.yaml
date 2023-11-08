@@ -1,5 +1,10 @@
 globals:
-  path_to_main: /home/jvroig/Dev/llama.cpp"
+  executable:
+    path_to_main: /home/jvroig/Dev/llama.cpp"
+    threads: "8"
+    max_input_tokens: "2000"
+    max_output_tokens: "300"
+    n_gpu_layers: "999"
   model:
     ext: ".gguf"
     basedir: "/mnt/AData/VMShared/LLMs/"
@@ -8,7 +13,6 @@ globals:
     output: "output"
     error: "perf"
     log:  "log"
-  threads: "8"
   quants:
     - q2_K
     - q3_K
