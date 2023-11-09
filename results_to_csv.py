@@ -8,7 +8,7 @@ from datetime import datetime
 ###############
 #General Config
 path_to_data    = "data"
-path_to_results = "/mnt/AData/VMShared/llm_localbench_results/EC2_Trial1"
+path_to_results = "/mnt/AData/VMShared/llm_localbench_results/ec2_full"
 output_csv      = "results_output.csv"
 perf_csv        = "results_perf.csv"
 
@@ -52,9 +52,6 @@ for domain in domains:
                     output[domain][model][temp][thread] = {}
                     thread_folder = temp_folder + os.sep + thread
                     runs = [f.name for f in os.scandir(thread_folder) if f.is_dir()]
-                    print("Inside threads!")
-                    print(thread)
-                    print(runs)
                     for run in runs:
                         output[domain][model][temp][thread][run] = {}
                         run_folder = thread_folder + os.sep + run
