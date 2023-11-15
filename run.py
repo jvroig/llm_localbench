@@ -36,7 +36,7 @@ for model_name in models:
 
                             #end the loop if the prompt file does not exist. This can happen because our prompt domains 
                             #   don't necessarily have the same quantity of prompts for each prompt type.
-                            if os.path.isfile(data_dir+prompt_file) == False: break
+                            if os.path.isfile(data_dir+prompt_file) == False: continue
 
                             with open(data_dir+prompt_file, "r") as f:
                                 prompt = f.read()
